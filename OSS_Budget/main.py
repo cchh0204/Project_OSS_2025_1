@@ -9,8 +9,9 @@ def main():
         print("1. 지출 추가")
         print("2. 소득 추가")
         print("3. 지출 목록 보기")
-        print("4. 총 지출 보기")
-        print("5. 종료")
+        print("4. 소득 목록 보기")
+        print("5. 총 지출 보기")
+        print("6. 종료")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -32,14 +33,16 @@ def main():
                 print("잘못된 금액입니다.\n")
                 continue
             budget.add_income(source, description, amount)
-
         elif choice == "3":
             budget.list_expenses()
 
         elif choice == "4":
-            budget.total_spent()
+            budget.list_incomes()
 
         elif choice == "5":
+            budget.total_spent()
+
+        elif choice == "6":
             print("가계부를 종료합니다.")
             break
 

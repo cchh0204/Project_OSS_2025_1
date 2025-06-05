@@ -28,6 +28,15 @@ class Budget:
             print(f"{idx}. {e}")
         print()
 
+    def list_incomes(self):
+        if not self.incomes:
+            print("소득 내역이 없습니다.\n")
+            return
+        print("\n[소득 목록]")
+        for idx, e in enumerate(self.incomes, 1):
+            print(f"{idx}. {e}")
+        print()
+
     def total_spent(self):
         total = sum(e.amount for e in self.expenses)
         print(f"총 지출: {total}원\n")
