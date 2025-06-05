@@ -1,15 +1,23 @@
 import datetime
 from expense import Expense
+from income import Income
 
 class Budget:
     def __init__(self):
         self.expenses = []
+        self.incomes = []
 
     def add_expense(self, category, description, amount):
         today = datetime.date.today().isoformat()
         expense = Expense(today, category, description, amount)
         self.expenses.append(expense)
         print("지출이 추가되었습니다.\n")
+    
+    def add_income(self, source, description, amount):
+        today = datetime.date.today().isoformat()
+        income = Income(today, source, description, amount)
+        self.incomes.append(income)
+        print("소득이 추가되었습니다.\n")
 
     def list_expenses(self):
         if not self.expenses:
